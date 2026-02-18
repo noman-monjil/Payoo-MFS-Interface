@@ -29,15 +29,19 @@
          <div class="card  rounded-2xl bg-base-100 w-full max-w-sm mx-auto shadow">
       <div class="card-body ">
         <fieldset class="fieldset">
-          <label class="label font-medium text-[#080808]">Mobile Number</label>
-          <input type="number" class="input rounded-full" placeholder="Enter Your Number" />
-          <label class="label font-medium text-[#080808]">4 Digit Pin</label>
-          <input type="password" class="input rounded-full" placeholder="Enter 4 digit" />
-           <button class="btn btn-primary rounded-full font-semibold  mt-4">Login</button>
+          <label class="label font-medium text-neutral">Mobile Number</label>
+          <input id="mobile-number" maxlength="11" minlength="11" type="text" class="input border-none rounded-full bg-base-200" placeholder="Enter Your Number" value="01732119789" />
+          <label  class="label font-medium text-[#080808]">4 Digit Pin</label>
+          <input id="pin-number" maxlength="4" minlength="4" type="password" class="input border-none bg-base-200 rounded-full" placeholder="Enter 4 digit" />
+           <button id="Login-btn" class="btn btn-primary rounded-full font-semibold  mt-4">Login</button>
         </fieldset>
       </div>
     </div>
     </div>
+
+
+
+    <script src="script/login.js"></script>
     
 </body>
 </html>
