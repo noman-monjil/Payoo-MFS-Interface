@@ -35,6 +35,20 @@ document.getElementById('withdraw-btn').addEventListener("click",function(){
         alert("Cash Out Successful");
         setBalance(newBalance)
         // availableBalance.innerText=newBalance;
+         // ---------------------for history-----------
+         // history container
+        const history = document.getElementById("history");
+        // 2- div create
+        const newHistory = document.createElement("div");
+        // 3 new div innerHtml add
+        newHistory.innerHTML = `
+        <div class="Transaction-card bg-base-100 p-5 ">
+              Cash out  ${cashOutAmountInput + "$"} to  Account Number is ${numberInput} successfully ${new Date()}
+               </div>
+        
+        `;
+        // new div append in history container
+        history.prepend(newHistory);
     }else{
         alert("Incorrect pin");
     }
