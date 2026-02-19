@@ -2,41 +2,38 @@
 
 
 
-document.getElementById('withdraw-btn').addEventListener("click",function(){
+document.getElementById('withdraw-btn').addEventListener("click", function () {
 
     // get the number from input
-    const numberInput=getElementFromInput("cashout-number-input");
-    
-   
-    if(numberInput.length !==11)
-    {
+    const numberInput = getElementFromInput("cashout-number-input");
+
+
+    if (numberInput.length !== 11) {
         alert("Invalid number");
         return;
     }
-       for (let i = 0; i < numberInput.length; i++) {
+    for (let i = 0; i < numberInput.length; i++) {
         if (numberInput.charCodeAt(i) < 48 || numberInput.charCodeAt(i) > 57) {
             alert("Invalid Number");
             return;
         }
     }
     //Cash amount 
-     const CurrentBalance=getBalance();
-   
-    const cashOutAmountInput=getElementFromInput("cashout-amount-input");
-    
-    let newBalance=CurrentBalance-Number(cashOutAmountInput);
-    if(newBalance<0)
-    {
+    const CurrentBalance = getBalance();
+
+    const cashOutAmountInput = getElementFromInput("cashout-amount-input");
+
+    let newBalance = CurrentBalance - Number(cashOutAmountInput);
+    if (newBalance < 0) {
         alert("Insufficient balance")
     }
-    const PinNumber=getElementFromInput("cashout-pin");
-    if(PinNumber =='1234')
-    {
+    const PinNumber = getElementFromInput("cashout-pin");
+    if (PinNumber == '1234') {
         alert("Cash Out Successful");
         setBalance(newBalance)
         // availableBalance.innerText=newBalance;
-         // ---------------------for history-----------
-         // history container
+        // ---------------------for history-----------
+        // history container
         const history = document.getElementById("history");
         // 2- div create
         const newHistory = document.createElement("div");
@@ -49,7 +46,7 @@ document.getElementById('withdraw-btn').addEventListener("click",function(){
         `;
         // new div append in history container
         history.prepend(newHistory);
-    }else{
+    } else {
         alert("Incorrect pin");
     }
 })

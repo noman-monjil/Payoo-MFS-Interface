@@ -2,7 +2,7 @@
 document.getElementById("add-money-btn").addEventListener("click", function () {
 
     //  bank account select
-    const selected =getElementFromInput("select-one");
+    const selected = getElementFromInput("select-one");
     console.log(selected)
 
     if (selected == "selected-a") {
@@ -28,7 +28,7 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     // Bank  Amount to Add 
     const addmoneyAmountBank = getElementFromInput("Bank-Amount-to-Add");
     let newBalance = Number(addmoneyAmountBank) + Number(getBalance());
-    
+
 
     // pin number
     const pinNumber = getElementFromInput("add-money-pin");
@@ -36,16 +36,16 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
         alert("Incorrect pin number");
         return;
     } else {
-        alert(`Cash added ${addmoneyAmountBank+"$"} from  ${selected} is successful`);
+        alert(`Cash added ${addmoneyAmountBank + "$"} from  ${selected} is successful`);
         setBalance(newBalance);
         // history container
-        const history=document.getElementById("history");
+        const history = document.getElementById("history");
         // 2- div create
-        const newHistory=document.createElement("div");
+        const newHistory = document.createElement("div");
         // 3 new div innerHtml add
-        newHistory.innerHTML=`
+        newHistory.innerHTML = `
         <div class="Transaction-card bg-base-100 p-5 ">
-                Cash added ${addmoneyAmountBank+"$"} from  ${selected} Account Number is ${addMoneyNumberInput} successfully ${new Date()}
+                Cash added ${addmoneyAmountBank + "$"} from  ${selected} Account Number is ${addMoneyNumberInput} successfully ${new Date()}
                </div>
         
         `;

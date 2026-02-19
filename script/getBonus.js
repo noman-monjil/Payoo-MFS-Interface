@@ -1,12 +1,12 @@
-document.getElementById('bonus-btn').addEventListener("click",function(){
+document.getElementById('bonus-btn').addEventListener("click", function () {
     console.log("bonus");
-    const getbonus=getElementFromInput("get-bonus-input");
-    if(getbonus=='nom200'){
-    let newBalance=200+getBalance();
-    setBalance(newBalance);
-    alert(`You have get $200`);
-    // ---------------------for history-----------
-         // history container
+    const getbonus = getElementFromInput("get-bonus-input");
+    if (getbonus == 'nom200') {
+        let newBalance = 200 + getBalance();
+        setBalance(newBalance);
+        alert(`You have get $200`);
+        // ---------------------for history-----------
+        // history container
         const history = document.getElementById("history");
         // 2- div create
         const newHistory = document.createElement("div");
@@ -19,8 +19,8 @@ document.getElementById('bonus-btn').addEventListener("click",function(){
         `;
         // new div append in history container
         history.prepend(newHistory);
-    return;
-    }else{
+        return;
+    } else {
         alert('wrong coupon code please try again');
         return;
     }
